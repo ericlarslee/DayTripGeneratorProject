@@ -31,8 +31,11 @@ function letUsGoOnADayTrip() {
     let entertainmentOptions = ["go hiking", "go shopping", "visit friends", "view local church architecture"];
 
     let city = randomSelect(cities, "cities");
-    let restaurant = randomSelect(restaurantOptions);
-    let transport = randomSelect(transportOptions);
-    let entertainment = randomSelect(entertainmentOptions);
+    let restaurant = randomSelect(restaurantOptions, "restaurant");
+    let transport = randomSelect(transportOptions, "transport");
+    let entertainment = randomSelect(entertainmentOptions, "entertainment");
 
+    console.log(`It looks like the details of your trip are decided. You will go to ${city} via ${transport} and will ${entertainment}. After, eat at ${restaurant} while you are there.`);
 }
+
+letUsGoOnADayTrip();
