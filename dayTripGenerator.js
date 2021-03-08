@@ -1,29 +1,18 @@
-
-
-let cities = ["International Falls", "Duluth", "Fort Francis", "Fargo", "Grand Marais"];
+'use strict'
 
 function randomSelect(entry, nameOfEntry) {
-    let randomNumber = Math.floor(Math.random() * entry.length);
-    let option = entry[randomNumber];
-    let decision = prompt(`How do you feel about ${option} as the option for ${nameOfEntry} for the day trip? Answer "yes" or "no"`);
-        if(decision !== "yes"){
-            randomNumber = Math.floor(Math.random() * entry.length);
-            return entry[randomNumber];
+        let randomNumber = Math.floor(Math.random() * entry.length);
+        let option = entry[randomNumber];
+        let decision = "";
+        do {
+        decision = prompt(`How do you feel about ${option} as the option for ${nameOfEntry} for the day trip? Answer "yes" or "no"`);randomNumber = Math.floor(Math.random() * entry.length);
+        option = entry[randomNumber];
         }
-        else {
-            return option;
-        }
-        
+        while(decision != "yes")
+        console.log(`You picked ${option} for ${nameOfEntry}.`)
+        return option;
 }
-
-console.log(randomSelect(cities, "cities"));
-
-
-/* function acceptRandomSelect() {
-    let decision = prompt(`Are you alright with going to ${city}`)
-} */
-
-function letUsGoOnADayTrip() {
+function letUsGoOnADayTrip() { 
 
     let cities = ["International Falls", "Duluth", "Fort Francis", "Fargo", "Grand Marais"];
     let restaurantOptions = ["Dairy King", "MacDons", "A&W"];
@@ -35,7 +24,7 @@ function letUsGoOnADayTrip() {
     let transport = randomSelect(transportOptions, "transport");
     let entertainment = randomSelect(entertainmentOptions, "entertainment");
 
-    console.log(`It looks like the details of your trip are decided. You will go to ${city} via ${transport} and will ${entertainment}. After, eat at ${restaurant} while you are there.`);
+    console.log(`It looks like the details of your trip are decided. You will go to ${city} via ${transport} and will ${entertainment}. After, you will eat at ${restaurant} while you are there.`);
 }
 
 letUsGoOnADayTrip();
