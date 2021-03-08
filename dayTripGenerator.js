@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function randomSelect(entry, nameOfEntry) {
         let randomNumber = Math.floor(Math.random() * entry.length);
